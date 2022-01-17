@@ -1,0 +1,17 @@
+.emp-form .row{
+    color: black;
+    padding-top: 2px;
+}
+
+.emp-form button{
+    margin-top: 10px;
+    width: 100%;
+}
+
+.container{
+    margin-top: 80px;
+    padding:8px;
+    background-color: rgb(243, 161, 9);
+    max-width: 900px;
+    width:80%;
+}

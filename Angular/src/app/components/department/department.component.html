@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="upper-wrapper">
+        <div class="col-sm-5 ">
+            <input type="text" class="form-control" id="search-bar" placeholder="Search..." [(ngModel)]="filter">
+        </div>
+        <div>
+            <button class="btn btn-primary" id="searchbtn" (click)="search()">Search</button>
+            <button class="btn btn-secondary" id="clearbtn" (click)="clear()">Clear</button>
+            <button class="btn btn-success" id="addbtn" [routerLink]="['/departmentform']">ADD</button>
+        </div>
+    </div>
+    <table class="table table-bordered table-hover table-striped" id="dept-table">
+        <thead class="table-dark" >
+            <tr>
+                <th (click)="sort('id')">DEPARTMENT ID</th>
+                <th (click)="sort('name')">DEPARTMENT NAME </th>
+                <th>ACTION</th>
+            </tr>
+        </thead>
+        <tbody id="tbody" *ngFor="let dept of deptData">
+            <tr>
+                <td>{{dept.id}}</td>
+                <td>{{dept.name}}</td>
+                <td><button class="btn btn-warning" (click)="Edit(dept)">Edit</button>
+                    <button class="btn btn-danger" (click)="delete(dept, 'deptArray')">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="buttons" *ngIf="deptData.length > 0">
+      
+        <button id= "btn" (click)="first('currentPageDept')"><a>first</a></button>
+        <button id= "btn" (click)="prev('currentPageDept')"><a>Previous</a></button>
+        <button id= "btn"  (click)="next('currentPageDept')"><a>Next</a> </button>
+        <button id= "btn" (click)="last('currentPageDept')"><a>Last</a></button>
+</div> 
+
+    <div class="pageInfo" *ngIf="deptData.length > 0">
+        <p>Showing {{currentpage}} of {{totalPages}} pages</p>
+    </div>
+
+</div>

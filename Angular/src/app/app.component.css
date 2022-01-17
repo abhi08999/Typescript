@@ -1,0 +1,13 @@
+.navbar{
+    background-color:orange;
+  }
+  
+  .navbar a:hover{
+    text-decoration: underline;
+    padding: 5px;
+   background-color: rgb(235, 210, 179);
+   color:black;
+  }
+  .navbar li{
+    margin-left:40px;
+  }

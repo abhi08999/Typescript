@@ -1,0 +1,46 @@
+<div class="container">
+    <div class="upper-wrapper">
+        <div class="col-sm-5 ">
+            <input type="text" class="form-control" id="search-bar" placeholder="Search..."[(ngModel)]="filter" >
+        </div>
+        <div>
+            <button class="btn btn-primary" id="searchbtn" (click)="search()">Search</button>
+            <button class="btn btn-secondary" id="clearbtn" (click)="clear()">Clear</button>
+            <button class="btn btn-success" id="addbtn" [routerLink]="['/employeeform']">ADD </button>
+        </div>
+    </div>
+    <table class="table table-bordered table-hover table-striped" id="emp-table">
+        <thead class="table-dark" >
+            <tr>
+                <th (click)="sort('id')">EMPLOYEE ID </th>
+                <th (click)="sort('name')">EMPLOYEE NAME</th> 
+                <th (click)="sort('age')" >EMPLOYEE AGE</th>
+                <th>ACTION</th>
+            </tr>
+        </thead>
+       
+       <tbody id="tbody" *ngFor="let emp of empData">
+            <tr>
+                <td>{{emp.id}}</td>
+                <td>{{emp.name}}</td>
+                <td>{{emp.age}}</td>
+                <td><button class="btn btn-warning"(click)="Edit(emp)">Edit</button>
+                    <button class="btn btn-danger" (click)="delete(emp,'empArray')">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="buttons" *ngIf="empData.length > 0">
+      
+            <button id= "btn" (click)="first('currentPageEmp')"><a>first</a></button>
+            <button id= "btn" (click)="prev('currentPageEmp')"><a>Previous</a></button>
+            <button id= "btn"  (click)="next('currentPageEmp')"><a>Next</a> </button>
+            <button id= "btn" (click)="last('currentPageEmp')"><a>Last</a></button>
+    </div> 
+    <br/> 
+    <div class="pageInfo" *ngIf="empData.length > 0">
+        <p>Showing {{currentpage}} of {{ totalPages}} pages</p>
+    </div>
+
+</div>

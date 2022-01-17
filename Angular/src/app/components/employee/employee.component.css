@@ -1,0 +1,51 @@
+.container table{
+    text-align: center;
+}
+
+#search-bar{
+    float: left;
+    margin-top: 40px;
+    margin-bottom: 50px;
+}
+
+.upper-wrapper button{
+    margin-top: 40px;
+    width: 70px;
+    border-radius: 10px;
+}
+
+#addbtn{
+    float: right;
+}
+
+#clearbtn, #searchbtn{
+    margin-left: 10px;
+}
+
+#tbody .btn{
+    border-radius: 10px;
+    margin-left: 4px;
+}
+
+nav li a{
+    background-color: #18dcff;
+    color: #fff;
+}
+
+.pageInfo{
+    text-align: center;
+}
+.buttons{
+    text-align: center;
+    cursor: pointer;
+   
+}
+.buttons #btn:hover a{
+    padding: 8px;
+   background-color: rgb(250, 192, 121);
+   color:black;
+}
+.table-dark th{
+cursor: pointer;
+
+}
